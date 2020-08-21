@@ -9,6 +9,9 @@ function manejarSolicitud(solicitud, respuesta) {
         if(err) throw err;
         respuesta.writeHead(200, {"Content-type": "text/html"});
         respuesta.end(data);
-    })
-
+    });
 }
+
+servidor.listen(PORT, function() {
+    console.log("El servidor esta escuchando en el puerto: " + PORT + ". Acceda a traves de la siguente liguilla: http://localhost:" + PORT)
+});
