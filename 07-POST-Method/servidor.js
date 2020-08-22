@@ -50,6 +50,6 @@ function reproducirThankYou(sol, res) {
     })
 }
 
-servidor.listen(PORT, function{
+servidor.listen(PORT, function() {
     console.log("El servidor esta escuchando en: http://localhost:" + PORT);
 });
