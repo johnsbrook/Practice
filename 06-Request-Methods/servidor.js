@@ -7,8 +7,8 @@ function manejarSolicitud(solicitud, respuesta) {
     solicitud.on('data', function(data) {
         solicitarData += data;
     });
-    solicitud.on('fin', function() {
-        console.log('Usted hizo una', solicitud.method, 'con una data: \n', solicitarData);
+    solicitud.on('end', function() {
+        console.log('Usted hizo un ' + solicitud.method + ' con una data: \n', solicitarData);
         respuesta.end();
     })
 }
