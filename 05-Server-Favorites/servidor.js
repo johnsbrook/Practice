@@ -24,7 +24,8 @@ function manejadorSolicitud(solicitud, respuesta) {
 
             respuesta.writeHead(200, {'Content-Type': 'text/html'});
             respuesta.end(data);
-        })
+        });
+        break;
 
     case "/frameworks":
         fs.readFile(__dirname, '/framework.html', function(err, data){
@@ -32,7 +33,8 @@ function manejadorSolicitud(solicitud, respuesta) {
 
             respuesta.writeHead(200, {'Content-Type': 'text/html'});
             respuesta.end(data);
-        })
+        });
+        break;
     
     case "/movies":
         fs.readFile(__dirname, '/movies.html', function(err, data){
@@ -40,7 +42,8 @@ function manejadorSolicitud(solicitud, respuesta) {
 
             respuesta.writeHead(200, {'Content-Type': 'text/html'});
             respuesta.end(data);
-        })
+        });
+        break;
     }
 }
 
