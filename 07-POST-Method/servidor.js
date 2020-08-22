@@ -6,7 +6,7 @@ var servidor = http.createServer(manejarSolicitud);
 function manejarSolicitud(sol, res) {
     var camino = sol.url;
     switch (camino) {
-        case '/thankyou': 
+        case '/thanks': 
             return reproducirThankYou(sol, res);
         default:
             return reproducirWelcome(sol,res);
@@ -24,17 +24,18 @@ function reproducirWelcome(sol, res) {
             res.writeHead(200, {"Content-Type": "text/html"});
             res.end(data);
         }
-    })
+    });
 }
 
 function reproducirThankYou(sol, res) {
 
     var solicitudData = "";
+    
     var miHTML = "<html><head><title>Saludos, Noder!</title></head><body><h1>Lo sentimos, no recibimos ninguna data.</h1></body></html>";
 
     sol.on("data", function(data) {
         solicitudData += data;
-        console.log("Usted ha entrado datos al servidor: \n" + solicitudData);
+        console.log("Usted ha entrado datos al servidor: \n", solicitudData);
 
         miHTML = 
                 "<html><head><title>Saludos, Noder!</title></head><body>" +
